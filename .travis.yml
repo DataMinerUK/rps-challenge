@@ -1,4 +1,9 @@
 rvm: '2.2.1'
-script: 
+
+addons:
+  code_climate:
+    repo_token: 336cac4500ce63398898dace7c2a062d42d728e07ca99f5071371d3864cd34ae
+
+script:
   - bundle exec rspec spec
   - bundle exec cucumber
