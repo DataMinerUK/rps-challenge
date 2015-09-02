@@ -1,7 +1,14 @@
 # Rock Paper Scissors
 
-User Stories
-------------
+[![Build Status](https://travis-ci.org/DataMinerUK/rps-challenge.svg?branch=master)](https://travis-ci.org/DataMinerUK/rps-challenge)  [![Coverage Status](https://coveralls.io/repos/DataMinerUK/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/DataMinerUK/rps-challenge?branch=master) [![Code Climate](https://codeclimate.com/github/DataMinerUK/rps-challenge/badges/gpa.svg)](https://codeclimate.com/github/DataMinerUK/rps-challenge)
+
+Ruby implementation of the game Rock, Paper, Scissors with advanced Rock, Paper, Scissors, Lizard, Spock mode. Fully tested with Rspec and Capybara
+
+## Getting Started
+
+## Testing
+
+## User Stories
 
 ```sh
 As a player
@@ -13,29 +20,12 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Functionality
--------------
-
-- the player should be able to enter their name before the game
-- the player will be presented the choices (rock, paper and scissors)
-- the player can choose one option
-- the game will choose a random option
-- a winner will be declared
-
 ## Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-
-## Multiplayer
-
-Two players can play against each other
-
-## Bonus level 2: Rock, Paper, Scissors, Lizard, Spock
-
-Advanced mode uses these _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+- Advanced mode uses these _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 # Implementation
 
@@ -52,9 +42,9 @@ Multi player mode. Here the logic in the controller sets it such that once one p
 [v3.0](https://github.com/DataMinerUK/rps-challenge/releases/tag/v3.0)
 ------
 
-Advanced mode Rock Paper Scissors Lizard Spock has been implemented by creating a Game::RulesOptions class within Game which allows the controller to set new rules and options.
+Advanced mode Rock Paper Scissors Lizard Spock has been implemented by creating a `Game::RulesOptions` class within Game which allows the controller to set new rules and options.
 
 [v4.0](https://github.com/DataMinerUK/rps-challenge/releases/tag/v4.0)
 -----
 
-Refactored to use the strategy pattern. This reqyuired making a module to contain the game [dynamics](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/dynamics.rb) and include this in a module for [Rock, Paper, Scissors](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rps.rb) and [Rock, Paper, Scissors, Lizard, Spock](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rpls.rb). All these need to contain are the rules and options for each game version. Now, when a Game is instanciated it takes two arguments; the Player class and the version module. The [module is included](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/game.rb#L12) on instanciation.
+Refactored to use the strategy pattern. This required making a module to contain the game [dynamics](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/dynamics.rb) and include this in a module for [Rock, Paper, Scissors](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rps.rb) and [Rock, Paper, Scissors, Lizard, Spock](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rpls.rb). All these need to contain are the rules and options for each game version. Now, when a Game is instanciated it takes two arguments; the Player class and the version module. The [module is included](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/game.rb#L12) on instanciation.
