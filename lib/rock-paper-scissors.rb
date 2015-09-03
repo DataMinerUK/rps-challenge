@@ -16,33 +16,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/start' do
-
-    if params[:advanced] == 'on'
-      $game ||= Game.new Player, RPSLS
-    else
-      $game ||= Game.new Player, RPS
-    end
-
-    if params[:single] == 'on'
-      session[:player] = 'player_1'
-      $game.player_1.opponent.name = "Computer"
-      $game.player_1.opponent.choice = $game.options.sample
-    elsif params[:multi] == 'on'
-      session[:player] = 'player_1'
-    end
-
+    build_game
+    assign_player_mode
     erb :start
   end
 
   post '/start' do
-
     @user = params[:name]
     if @user and @user.strip != ''
-
-      unless session[:player] == 'player_1'
-        session[:player] = 'player_2'
-      end
-
+      assign_player
       player_from_session.name = @user
       erb :choice
     else
@@ -51,34 +33,57 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/outcome' do
-
     @choice = params.key('on')
     player_from_session.choice = @choice
     redirect '/outcome'
   end
 
   get '/outcome' do
-
     if $game.over?
-      @username = player_from_session.name
-      @choice = player_from_session.choice
-      @opponent_name = player_from_session.opponent.name
-      @opponent_choice = player_from_session.opponent.choice
-      @message = message @choice, @opponent_choice
-      @result = $game.won_lost_or_tied player_from_session
+      display_results
     else
       redirect '/holding'
     end
-
     erb :outcome
   end
 
   get '/holding' do
-
     while !$game.over?
     end
-
     redirect '/outcome'
+  end
+
+  def build_game
+    if params[:advanced] == 'on'
+      $game ||= Game.new Player, RPSLS
+    else
+      $game ||= Game.new Player, RPS
+    end
+  end
+
+  def assign_player_mode
+    if params[:single] == 'on'
+      session[:player] = 'player_1'
+      $game.player_1.opponent.name = "Computer"
+      $game.player_1.opponent.choice = $game.options.sample
+    elsif params[:multi] == 'on'
+      session[:player] = 'player_1'
+    end
+  end
+
+  def assign_player
+    unless session[:player] == 'player_1'
+      session[:player] = 'player_2'
+    end
+  end
+
+  def display_results
+    @username = player_from_session.name
+    @choice = player_from_session.choice
+    @opponent_name = player_from_session.opponent.name
+    @opponent_choice = player_from_session.opponent.choice
+    @message = message @choice, @opponent_choice
+    @result = $game.won_lost_or_tied player_from_session
   end
 
   def player_from_session
