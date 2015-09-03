@@ -6,4 +6,3 @@ addons:
 
 script:
   - bundle exec rspec spec
-  - bundle exec cucumber
