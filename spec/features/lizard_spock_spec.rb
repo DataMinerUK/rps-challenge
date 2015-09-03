@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative 'helpers.rb'
 
 feature 'extending the game to Rock Paper Scissors Lizard Spock' do
 
@@ -37,16 +38,6 @@ feature 'extending the game to Rock Paper Scissors Lizard Spock' do
     allow($game.player_2).to receive(:choice).and_return('paper')
     click_button('Choose')
     expect(page).to have_content 'You won'
-  end
-
-  def nicola_in_single_player_advanced_mode
-    $game = nil
-    visit '/'
-    choose('advanced')
-    choose ('single')
-    click_button('Start Game')
-    fill_in('name', with: 'Nicola')
-    click_button('Submit')
   end
 
 end

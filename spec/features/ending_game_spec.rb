@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative 'helpers.rb'
 
 feature 'ending the game' do
 
@@ -21,16 +22,6 @@ feature 'ending the game' do
     allow($game.player_2).to receive(:choice).and_return('paper')
     click_button('Choose')
     expect(page).to have_content "You lost :("
-  end
-
-  def nicola_selects_rock
-    $game = nil
-    visit '/'
-    choose('single')
-    click_button('Start Game')
-    fill_in('name', with: 'Nicola')
-    click_button('Submit')
-    choose('rock')
   end
 
 end
