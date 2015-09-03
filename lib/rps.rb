@@ -5,7 +5,7 @@ module RPS
   include Dynamics
 
   def options
-    ["rock", "paper", "scissors"]
+    %w(rock paper scissors)
   end
 
   def rules

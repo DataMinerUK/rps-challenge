@@ -5,7 +5,7 @@ module RPSLS
   include Dynamics
 
   def options
-    ["rock","spock", "paper", "lizard","scissors"]
+    %w(rock spock paper lizard scissors)
   end
 
   def rules
