@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/DataMinerUK/rps-challenge.svg?branch=master)](https://travis-ci.org/DataMinerUK/rps-challenge)  [![Coverage Status](https://coveralls.io/repos/DataMinerUK/rps-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/DataMinerUK/rps-challenge?branch=master) [![Code Climate](https://codeclimate.com/github/DataMinerUK/rps-challenge/badges/gpa.svg)](https://codeclimate.com/github/DataMinerUK/rps-challenge)
 
-Ruby implementation of the game Rock, Paper, Scissors with advanced Rock, Paper, Scissors, Lizard, Spock mode. Fully tested with Rspec and Capybara
+Ruby implementation of the game Rock, Paper, Scissors with advanced Rock, Paper, Scissors, Lizard, Spock mode. Lovingly built using Sinatra and Bootstrap. Tested with Rspec and Capybara
 
 ## Getting Started
 
