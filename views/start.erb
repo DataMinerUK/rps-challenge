@@ -1,6 +1,7 @@
-<label>Enter your name</label>
-
-<form method='POST' action='/start'>
-  <input type='text' name='name' required>
+<form method='POST' action='/start' class="form-inline" style="padding:10px;">
+  <div class="form-group">
+    <label for="userName">Enter your name</label>
+      <input type='text' name='name' class="form-control" placeholder="Name" id="userName" required>
+  </div>
   <input type='submit' value='Submit' style='color: white; background-color: black;'>
 </form>
