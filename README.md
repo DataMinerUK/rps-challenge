@@ -4,6 +4,24 @@
 
 Ruby implementation of the game Rock, Paper, Scissors with advanced Rock, Paper, Scissors, Lizard, Spock mode. Lovingly built using Sinatra and Bootstrap. Tested with Rspec and Capybara
 
+## Play
+
+User can select normal or advanced level. Advanced level uses these [rules](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock). She can also select to play the computer (single player) or another player (multi player).
+
+![Alt text][RPS-index]
+
+User is asked to enter her name
+
+![Alt text][RPS-name]
+
+She can then decide what object she wants to play depending on what level she has chosen. If multi player mode is selected the game result is not shown until her opponent has made his choice.
+
+![Alt text][RPS-choice]
+
+Outcome is given with named opponent and the rule related to the outcome
+
+![Alt text][RPS-outcome]
+
 ## Getting Started
 
 ```sh
@@ -21,25 +39,6 @@ Run Rspec
 ```sh
 rspec
 ```
-
-## User Stories
-
-```sh
-As a player
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a player
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-- Advanced mode uses these _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
 
 # Implementation
 
@@ -62,3 +61,8 @@ Advanced mode Rock Paper Scissors Lizard Spock has been implemented by creating 
 -----
 
 Refactored to use the strategy pattern. This required making a module to contain the game [dynamics](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/dynamics.rb) and include this in a module for [Rock, Paper, Scissors](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rps.rb) and [Rock, Paper, Scissors, Lizard, Spock](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rpls.rb). All these need to contain are the rules and options for each game version. Now, when a Game is instanciated it takes two arguments; the Player class and the version module. The [module is included](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/game.rb#L12) on instanciation.
+
+[RPS-index]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%206.50.00%20PM_zpsatb43n0r.png
+[RPS-name]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%208.48.58%20PM_zpsx0rr2gje.png
+[RPS-choice]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%209.10.17%20PM_zpsyngqxlth.png
+[RPS-outcome]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%209.10.35%20PM_zps23n5schb.png
