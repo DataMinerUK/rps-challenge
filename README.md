@@ -62,6 +62,11 @@ Advanced mode Rock Paper Scissors Lizard Spock has been implemented by creating 
 
 Refactored to use the strategy pattern. This required making a module to contain the game [dynamics](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/dynamics.rb) and include this in a module for [Rock, Paper, Scissors](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rps.rb) and [Rock, Paper, Scissors, Lizard, Spock](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/rpls.rb). All these need to contain are the rules and options for each game version. Now, when a Game is instanciated it takes two arguments; the Player class and the version module. The [module is included](https://github.com/DataMinerUK/rps-challenge/blob/master/lib/game.rb#L12) on instanciation.
 
+[v5.0](https://github.com/DataMinerUK/rps-challenge/releases/tag/v5.0)
+------
+
+Basic styling using [Bootstrap](http://getbootstrap.com/). Made sure only one radio button can be selected per selection.
+
 [RPS-index]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%206.50.00%20PM_zpsatb43n0r.png
 [RPS-name]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%208.48.58%20PM_zpsx0rr2gje.png
 [RPS-choice]: http://i569.photobucket.com/albums/ss131/nicola_hughes1/Screen%20Shot%202015-09-06%20at%209.10.17%20PM_zpsyngqxlth.png
