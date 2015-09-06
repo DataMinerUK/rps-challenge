@@ -4,7 +4,7 @@
 
   <form action='/outcome' method='POST' class="radio-inline">
     <% ($game.options).each do |option| %>
-      <input type='radio' name='<%= option %>'><label><%= option.capitalize %></label>
+      <input type='radio' id='<%= option %>' name='choice' value='<%= option %>'><label><%= option.capitalize %></label>
       <br>
     <% end %>
     <br>

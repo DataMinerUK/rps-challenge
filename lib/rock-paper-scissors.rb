@@ -33,7 +33,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/outcome' do
-    @choice = params.key('on')
+    @choice = params[:choice]
     player_from_session.choice = @choice
     redirect '/outcome'
   end
