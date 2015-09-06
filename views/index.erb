@@ -1,20 +1,23 @@
-<h1>Rock Paper Scissors</h1>
+<div class="checkbox-inline">
 
-<form action='/start'>
+  <h3>Rock Paper Scissors</h3>
 
-  <p>Select the level of game you want to play</p>
-    <input type='radio' name='normal'><label>Normal</label>
-    <br>
-    <input type='radio' name='advanced'><label>Advanced - Rock Paper Scissors Lizard Spock</label>
-    <br>
+  <form action='/start' class="radio-inline">
 
-
-  <p>Select the mode you want to play</p>
-    <input type='radio' name='single'><label>Single Player</label>
-    <br>
-    <input type='radio' name='multi'><label>Multi Player</label>
-    <br><br>
+    <p>Select the level of game you want to play</p>
+      <input type='radio' name='normal' class="btn btn-default"><span class="label label-default"> Normal</span>
+      <br>
+      <input type='radio' name='advanced' class="btn btn-default"><span class="label label-success">Advanced</span> - with Lizard and Spock options
+      <br><br>
 
 
-  <input type='submit' value='Start Game' style='color: white; background-color: black;'>
-</form>
+    <p>Select the mode you want to play</p>
+      <input type='radio' name='single' class="btn btn-default"><span class="label label-primary">Single Player</span>
+      <br>
+      <input type='radio' name='multi' class="btn btn-default"><span class="label label-warning">Multi Player</span>
+      <br><br>
+
+
+    <input type='submit' value='Start Game' style='color: white; background-color: black;'>
+  </form>
+</div>
