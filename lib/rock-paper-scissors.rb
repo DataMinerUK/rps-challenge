@@ -54,7 +54,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def build_game
-    if params[:advanced] == 'on'
+    if params[:level] == 'advanced'
       $game ||= Game.new Player, RPSLS
     else
       $game ||= Game.new Player, RPS
@@ -62,11 +62,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def assign_player_mode
-    if params[:single] == 'on'
+    if params[:mode] == 'single'
       session[:player] = 'player_1'
       $game.player_1.opponent.name = "Computer"
       $game.player_1.opponent.choice = $game.options.sample
-    elsif params[:multi] == 'on'
+    elsif params[:mode] == 'multi'
       session[:player] = 'player_1'
     end
   end
