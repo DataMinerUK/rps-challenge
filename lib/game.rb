@@ -20,14 +20,14 @@ class Game
   end
 
   def over?
-    !player_1.choice.nil? and !player_1.opponent.choice.nil?
+    !player_1.choice.nil? && !player_1.opponent.choice.nil?
   end
 
   def won_lost_or_tied player
     fail 'You have to choose between rock, paper or scissors' unless player.choice
     fail 'Erm, you have no opponent :/' unless player.opponent
     fail 'Still waiting for your opponent to decide' unless player.opponent.choice
-    
+
     if tied? player
       "You've tied"
     elsif winner? player
