@@ -91,7 +91,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   def message choice1, choice2
-    ($game.rules).select { |rule| rule.include?(choice1.capitalize) and rule.include?(choice2.capitalize) }[0]
+    if choice1 != choice2
+      ($game.rules).select { |rule| rule.include?(choice1.capitalize) && rule.include?(choice2.capitalize) }[0]
+    end
   end
 
   run! if app_file == $0
